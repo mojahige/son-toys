@@ -1,0 +1,19 @@
+<main>
+  <slot for="content" />
+</main>
+
+<div @name="app-list" class="apps">
+  <article :for="app in apps">
+    <h2>{ app.title }</h2>
+    <p>{ app.description }</p>
+    <a href="/apps/{ app.path }">View</a>
+
+    <!-- Optional -->
+    <img
+      :if="app.thumb"
+      :src="/apps/{ app.path }/{ app.thumb }"
+      alt=""
+      loading="lazy"
+    />
+  </article>
+</div>

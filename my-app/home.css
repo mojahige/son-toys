@@ -1,0 +1,39 @@
+body {
+  background-color: #222;
+  color: white;
+}
+
+@scope (.apps) {
+  :scope {
+    * {
+      margin: 0;
+    }
+  }
+
+  article {
+    display: grid;
+    grid-template:
+      "thumb" auto
+      "title" auto
+      "description" auto
+      / auto;
+    gap: 0.5rem;
+  }
+
+  h2 {
+    grid-area: title;
+  }
+
+  p {
+    grid-area: description;
+  }
+
+  img {
+    grid-area: thumb;
+  }
+
+  a {
+    justify-self: start;
+    color: white;
+  }
+}

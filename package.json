@@ -1,0 +1,19 @@
+{
+  "name": "son-toys",
+  "author": "mojahige (Yu Nozato)",
+  "private": true,
+  "scripts": {
+    "dev": "nue serve --root my-app",
+    "build": "nue build --root my-app --production",
+    "preview": "nue serve --root my-app --production",
+    "stats": "nue stats --root my-app",
+    "format": "prettier --write 'my-app/**/*.(html|css)'"
+  },
+  "devDependencies": {
+    "@biomejs/biome": "^1.5.3",
+    "nuekit": "^0.3.3",
+    "prettier": "^3.2.4",
+    "stylelint": "^16.2.1",
+    "stylelint-config-standard": "^36.0.0"
+  }
+}

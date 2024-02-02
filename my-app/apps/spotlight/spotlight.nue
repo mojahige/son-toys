@@ -1,9 +1,5 @@
 <div @name="spotlight" style="--x: {x}px; --y: {y}px">
-  <div
-    class="stage"
-    ref="stage"
-    @pointermove="onMove"
-  >
+  <div class="stage" ref="stage" @pointermove="onMove">
     <div class="spotlight" ref="spotlight">
       <p>🐶</p>
       <p>🐥</p>
@@ -21,7 +17,7 @@
     y = 0;
     frameId = 0;
 
-    mounted() {      
+    mounted() {
       const { width, height } = this.$refs.stage.getBoundingClientRect();
 
       this.x = width / 2;

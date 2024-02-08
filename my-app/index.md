@@ -3,6 +3,6 @@ title: My Son's App 👶
 description: Fooling around with hot-reloading
 ---
 
-# My Son's App 👶
+# My Son toys 👶
 
-[app-list]
+[toy-list]

@@ -1,0 +1,52 @@
+<div @name="spotlight" style="--x: {x}px; --y: {y}px">
+  <div class="stage" ref="stage" @pointermove="onMove">
+    <div class="spotlight" ref="spotlight">
+      <p>🐶</p>
+      <p>🐥</p>
+      <p>😼</p>
+      <p>💩</p>
+      <p>👻</p>
+      <p>👽</p>
+      <p>🎃</p>
+      <p>🗿</p>
+    </div>
+  </div>
+
+  <script>
+    x = 0;
+    y = 0;
+    frameId = 0;
+
+    mounted() {
+      const { width, height } = this.$refs.stage.getBoundingClientRect();
+
+      this.x = width / 2;
+      this.y = height / 2;
+
+      this.setCharacterPosition();
+    }
+
+    setCharacterPosition() {
+      this.$refs.spotlight.querySelectorAll('p').forEach((el, i) => {
+        el.style.paddingInlineStart = `${Math.floor(Math.random() * 101)}%`;
+      });
+    }
+
+    /**
+     * @param {PointerEvent} event
+     */
+    onMove(event) {
+      event.preventDefault();
+
+      const { clientX, clientY } = event;
+
+      if (!this.frameId) {
+        this.frameId = requestAnimationFrame(() => {
+          this.frameId = null;
+          this.x = clientX;
+          this.y = clientY;
+        });
+      }
+    }
+  </script>
+</div>

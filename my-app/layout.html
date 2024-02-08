@@ -2,18 +2,17 @@
   <slot for="content" />
 </main>
 
-<div @name="app-list" class="apps">
-  <article :for="app in apps">
-    <h2>{ app.title }</h2>
-    <p>{ app.description }</p>
-    <a href="/apps/{ app.path }">View</a>
-
-    <!-- Optional -->
-    <img
-      :if="app.thumb"
-      :src="/apps/{ app.path }/{ app.thumb }"
-      alt=""
-      loading="lazy"
-    />
+<div @name="toy-list" class="toys">
+  <article :for="toy in toys">
+    <h2>{ toy.title }</h2>
+    <p>{ toy.description }</p>
+    <a href="/toys/{ toy.path }">View</a>
+    <iframe
+      src="toys/{ toy.path }"
+      width="16"
+      height="9"
+      title="{ toy.title } image"
+      tabindex="-1"
+    ></iframe>
   </article>
 </div>

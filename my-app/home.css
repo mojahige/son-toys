@@ -3,8 +3,16 @@ body {
   color: white;
 }
 
-@scope (.apps) {
+main {
+  padding: 1rem;
+}
+
+@scope (.toys) {
   :scope {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 1.5rem 1rem;
+
     * {
       margin: 0;
     }
@@ -28,8 +36,14 @@ body {
     grid-area: description;
   }
 
-  img {
+  iframe {
     grid-area: thumb;
+    aspect-ratio: 16 / 9;
+    width: 100%;
+    height: auto;
+    border: 4px solid lightgray;
+    outline: none;
+    appearance: none;
   }
 
   a {

@@ -1,0 +1,50 @@
+<div @name="deka-text">
+  <div class="stage">
+  </div>
+
+  <script>
+    stage = null;
+
+    constructor(data) {
+      this.keyDown = this.keyDown.bind(data);
+    }
+
+    mounted() {
+      this.stage = this.$el.querySelector('.stage');
+
+      window.addEventListener('keydown', this.keyDown);
+    }
+
+    unmounted() {
+      window.removeEventListener('keydown', this.keyDown);
+    }
+
+    keyDown(event) {
+      if (/^[a-zA-Z0-9]$/.test(event.key)) {
+        this.appendText(event.key);
+      }
+    }
+
+    appendText(key) {
+      const p = this.createPushElement();
+
+      p.textContent = key;
+
+      p.addEventListener('animationend', (event) => {
+        p.remove();
+      });
+
+      this.stage.appendChild(p);
+    }
+
+    createPushElement() {
+      const p = document.createElement('p');
+
+      p.style.setProperty('--x', `${Math.floor(Math.random() * 101)}%`);
+      p.style.setProperty('--y', `${Math.floor(Math.random() * 101)}%`);
+      p.style.setProperty('--rem', `${Math.floor(Math.random() * 16) + 5}rem`);
+
+      return p;
+    }
+  </script>
+</div>

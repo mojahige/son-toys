@@ -10,8 +10,8 @@
     "format": "prettier --write 'my-app/**/*.(html|css)'"
   },
   "devDependencies": {
-    "@biomejs/biome": "^1.5.3",
-    "nuekit": "^0.3.3",
+    "@biomejs/biome": "^1.6.1",
+    "nuekit": "^0.5.1",
     "prettier": "^3.2.5",
     "stylelint": "^16.2.1",
     "stylelint-config-standard": "^36.0.0"
